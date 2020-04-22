@@ -1,0 +1,47 @@
+html,
+body {
+  height: 100%;
+}
+
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+body {
+  background: #292b2c;
+  /*background: linear-gradient(to right, rgb(240, 245, 247), rgb(124, 126, 128));*/
+}
+
+#cardparent
+{
+  justify-content: center;
+  display: flex;
+}
+
+#carddays,#cardpositive,#cardrecovered,#carddeceased
+{
+  background-color: #292b2c ;
+  box-shadow:0 0 10px dimgray;
+}
+
+#Contdowndays
+{
+  color: goldenrod;
+  font-size: large;
+}
+#positive
+{
+  color: rgb(236, 29, 29);
+  font-size: xx-large;
+}
+#recovered
+{
+  color: green;
+  font-size: xx-large;
+}
+#deceased
+{
+  color: dimgrey;
+  font-size: xx-large;
+}
