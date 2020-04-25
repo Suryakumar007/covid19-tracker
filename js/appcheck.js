@@ -69,21 +69,16 @@ function loadIndChart()
             Inddates.push(IndJson.cases_time_series[i].date.substring(0,6));
         }
 
+        if(window.myChart instanceof Chart)
+        {
+            window.myChart.destroy();
+        }
+
         var ctx = document.getElementById('myChart').getContext("2d");
 
-        var redgradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        redgradientStroke.addColorStop(0, 'red');
-        redgradientStroke.addColorStop(1, 'orange');
 
-        var greengradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        greengradientStroke.addColorStop(0, 'green');
-        greengradientStroke.addColorStop(1, '#54f542');
 
-        var greygradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        greygradientStroke.addColorStop(0, 'grey');
-        greygradientStroke.addColorStop(1, 'white');
-
-        var myChart=new Chart(ctx,{
+        window.myChart=new Chart(ctx,{
             type:'line',
             data:{
                 labels:Inddates,
@@ -92,11 +87,11 @@ function loadIndChart()
                     {
                         data:Inddeceased,
                         label:"Deceased",
-                        borderColor: greygradientStroke,
-                        pointBorderColor: greygradientStroke,
-                        pointBackgroundColor: greygradientStroke,
-                        pointHoverBackgroundColor: greygradientStroke,
-                        pointHoverBorderColor: greygradientStroke,
+                        borderColor: 'grey',
+                        pointBorderColor: 'grey',
+                        pointBackgroundColor: 'grey',
+                        pointHoverBackgroundColor: 'grey',
+                        pointHoverBorderColor: 'grey',
                         pointBorderWidth: 5,
                         pointHoverRadius: 10,
                         pointHoverBorderWidth: 1,
@@ -109,11 +104,11 @@ function loadIndChart()
                     {
                         data:Indrecovered,
                         label: "Recovered",
-                        borderColor: greengradientStroke,
-                        pointBorderColor: greengradientStroke,
-                        pointBackgroundColor: greengradientStroke,
-                        pointHoverBackgroundColor: greengradientStroke,
-                        pointHoverBorderColor: greengradientStroke,
+                        borderColor: "#138207",
+                        pointBorderColor: "#138207",
+                        pointBackgroundColor: "#138207",
+                        pointHoverBackgroundColor: "#138207",
+                        pointHoverBorderColor: "#138207",
                         pointBorderWidth: 5,
                         pointHoverRadius: 10,
                         pointHoverBorderWidth: 1,
@@ -125,17 +120,17 @@ function loadIndChart()
                     {
                         data:Indpositive,
                         label: "Positive",
-                        borderColor: redgradientStroke,
-                        pointBorderColor: redgradientStroke,
-                        pointBackgroundColor: redgradientStroke,
-                        pointHoverBackgroundColor: redgradientStroke,
-                        pointHoverBorderColor: redgradientStroke,
+                        borderColor: 'red',
+                        pointBorderColor: 'red',
+                        pointBackgroundColor: 'red',
+                        pointHoverBackgroundColor: 'red',
+                        pointHoverBorderColor: 'red',
                         pointBorderWidth: 3,
                         pointHoverRadius: 10,
                         pointHoverBorderWidth: 1,
                         pointRadius: 3,
                         fill: true,
-                        backgroundColor: "rgba(244, 144, 128, 0.8)",
+                        backgroundColor: "#FF1744",
                         borderWidth: 4
                     },             
                 
@@ -203,6 +198,11 @@ function loadTNChart()
         console.log(tnrecovered);
         console.log(tndeceased);
         console.log(tndates);
+
+        if(window.myChart instanceof Chart)
+        {
+            window.myChart.destroy();
+        }
         
         var ctx = document.getElementById('myChart').getContext("2d");
 
@@ -216,9 +216,11 @@ function loadTNChart()
 
         var greygradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
         greygradientStroke.addColorStop(0, 'grey');
-        greygradientStroke.addColorStop(1, 'white');
+        greygradientStroke.addColorStop(1, 'grey');
 
-        var myChart=new Chart(ctx,{
+
+
+        window.myChart=new Chart(ctx,{
         type:'line',
         data:{
             labels:tndates,
@@ -227,12 +229,12 @@ function loadTNChart()
                 {
                     data:tndeceased,
                     label:"Deceased",
-                    borderColor: greygradientStroke,
-                    pointBorderColor: greygradientStroke,
-                    pointBackgroundColor: greygradientStroke,
-                    pointHoverBackgroundColor: greygradientStroke,
-                    pointHoverBorderColor: greygradientStroke,
-                    pointBorderWidth: 5,
+                    borderColor: 'grey',
+                    pointBorderColor: 'grey',
+                    pointBackgroundColor: 'grey',
+                    pointHoverBackgroundColor: 'grey',
+                    pointHoverBorderColor: 'grey',
+                    pointBorderWidth: 3,
                     pointHoverRadius: 10,
                     pointHoverBorderWidth: 1,
                     pointRadius: 3,
@@ -244,12 +246,12 @@ function loadTNChart()
                 {
                     data:tnrecovered,
                     label: "Recovered",
-                    borderColor: greengradientStroke,
-                    pointBorderColor: greengradientStroke,
-                    pointBackgroundColor: greengradientStroke,
-                    pointHoverBackgroundColor: greengradientStroke,
-                    pointHoverBorderColor: greengradientStroke,
-                    pointBorderWidth: 5,
+                    borderColor: "#138207",
+                    pointBorderColor:"#138207",
+                    pointBackgroundColor: "#138207",
+                    pointHoverBackgroundColor: "#138207",
+                    pointHoverBorderColor: "#138207",
+                    pointBorderWidth: 3,
                     pointHoverRadius: 10,
                     pointHoverBorderWidth: 1,
                     pointRadius: 3,
@@ -260,17 +262,17 @@ function loadTNChart()
                 {
                     data:tnpositive,
                     label: "Positive",
-                    borderColor: redgradientStroke,
-                    pointBorderColor: redgradientStroke,
-                    pointBackgroundColor: redgradientStroke,
-                    pointHoverBackgroundColor: redgradientStroke,
-                    pointHoverBorderColor: redgradientStroke,
+                    borderColor: 'red',
+                    pointBorderColor: 'red',
+                    pointBackgroundColor: 'red',
+                    pointHoverBackgroundColor: 'red',
+                    pointHoverBorderColor: 'red',
                     pointBorderWidth: 3,
                     pointHoverRadius: 10,
                     pointHoverBorderWidth: 1,
                     pointRadius: 3,
                     fill: true,
-                    backgroundColor: "rgba(244, 144, 128, 0.8)",
+                    backgroundColor: "#FF5252",
                     borderWidth: 4
                 },             
             
@@ -323,6 +325,7 @@ function loadInd(){
         document.getElementById('deceased').innerHTML=json.statewise[0].deaths;
         document.getElementById('updatedtime').innerHTML="Updated as of "+json.statewise[0].lastupdatedtime;
         document.getElementById('updatedEntity').innerHTML="COVID-19 - INDIA";
+
 
         loadIndChart();
     }
