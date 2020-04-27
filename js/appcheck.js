@@ -17,6 +17,18 @@ document.addEventListener('DOMContentLoaded',function()
 }
 );
 
+$(document).ready(function () {
+    $('.nav li').click(function(e) {
+
+        $('.nav li').removeClass('active');
+
+        var $this = $(this);
+        if (!$this.hasClass('active')) {
+            $this.addClass('active');
+        }
+    });
+});
+
 function loadCountdown()
 {
 
@@ -184,7 +196,6 @@ function loadTNChart()
             }
             
         }
-        console.log(TNjson.states_daily.length);
     
         
         for(var i=1;i<tnpositive.length;i++)
@@ -206,20 +217,6 @@ function loadTNChart()
         
         var ctx = document.getElementById('myChart').getContext("2d");
 
-        var redgradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        redgradientStroke.addColorStop(0, 'red');
-        redgradientStroke.addColorStop(1, 'orange');
-
-        var greengradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        greengradientStroke.addColorStop(0, 'green');
-        greengradientStroke.addColorStop(1, '#54f542');
-
-        var greygradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        greygradientStroke.addColorStop(0, 'grey');
-        greygradientStroke.addColorStop(1, 'grey');
-
-
-
         window.myChart=new Chart(ctx,{
         type:'line',
         data:{
@@ -238,7 +235,7 @@ function loadTNChart()
                     pointHoverRadius: 10,
                     pointHoverBorderWidth: 1,
                     pointRadius: 3,
-                    fill: true,
+                    fill: false,
                     backgroundColor:'grey',
                     borderWidth: 4
                 },       
@@ -255,7 +252,7 @@ function loadTNChart()
                     pointHoverRadius: 10,
                     pointHoverBorderWidth: 1,
                     pointRadius: 3,
-                    fill: true,
+                    fill: false,
                     backgroundColor: "#138207",
                     borderWidth: 4
                 }, 
@@ -271,8 +268,8 @@ function loadTNChart()
                     pointHoverRadius: 10,
                     pointHoverBorderWidth: 1,
                     pointRadius: 3,
-                    fill: true,
-                    backgroundColor: "#FF5252",
+                    fill: false ,
+                    backgroundColor: "#FF1744",
                     borderWidth: 4
                 },             
             
