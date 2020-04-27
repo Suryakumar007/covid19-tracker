@@ -108,7 +108,7 @@ function loadIndChart()
                         pointHoverRadius: 10,
                         pointHoverBorderWidth: 1,
                         pointRadius: 3,
-                        fill: true,
+                        fill: false,
                         backgroundColor:"grey",
                         borderWidth: 4
                     },       
@@ -125,7 +125,7 @@ function loadIndChart()
                         pointHoverRadius: 10,
                         pointHoverBorderWidth: 1,
                         pointRadius: 3,
-                        fill: true,
+                        fill: false,
                         backgroundColor: "#138207",
                         borderWidth: 4
                     }, 
@@ -141,7 +141,7 @@ function loadIndChart()
                         pointHoverRadius: 10,
                         pointHoverBorderWidth: 1,
                         pointRadius: 3,
-                        fill: true,
+                        fill: false,
                         backgroundColor: "#FF1744",
                         borderWidth: 4
                     },             
