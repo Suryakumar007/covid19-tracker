@@ -6,6 +6,13 @@ body {
 
 #sticky-footer {
   flex-shrink: none;
+  
+}
+
+#footertext
+{
+  color: #ACACAC;
+  border-top:0.5px solid #ACACAC;
 }
 
 body {
@@ -17,7 +24,7 @@ body {
 {
   justify-content: center;
   display: flex;
-}
+} 
 
 #carddays,#cardpositive,#cardrecovered,#carddeceased
 {

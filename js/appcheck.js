@@ -26,6 +26,8 @@ $(document).ready(function () {
         if (!$this.hasClass('active')) {
             $this.addClass('active');
         }
+
+        $('.navbar-collapse').collapse('hide');
     });
 });
 
