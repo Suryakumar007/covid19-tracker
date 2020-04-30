@@ -26,15 +26,15 @@
     <title>Covid-19 Tracker</title>
 
     <!-- Custom files-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleedit.css">
     <!--<script src="js/app.js"></script>-->
     <script src="js/appcheck.js"></script>
   </head>
 
   <body >
 
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: #292b2c;">
-        <a class="navbar-brand" href="#">COVID-19 Tracker</a>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" id="navbar">
+        <a class="navbar-brand" href="#" id="navbartitle">COVID-19 Tracker</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -52,6 +52,16 @@
                 <li class="nav-item">
                     <a class="nav-link" id="navbarNews" href="#newsid" >Tips</a>
                 </li>
+
+                <li class="nav-item">
+                  <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                  </label>
+                  <em style="color: #ececec;">Enable Light Mode!</em>
+                </div>
+                </li>
             </ul>
       </nav>
 
@@ -60,8 +70,8 @@
         <div class="container text-center">
             <div class="row justify-content-center">
               <div class="col-md-7">
-                <h1 class="font-weight-light mt-4 text-white" id="updatedEntity">COVID-19 - TN</h1>
-                <p class="lead text-white-50" id="updatedtime">Updated as of 01 April 2020</p>
+                <h1 class="font-weight-light mt-4 " id="updatedEntity">COVID-19 - TN</h1>
+                <p class="lead " id="updatedtime">Updated as of 01 April 2020</p>
               </div>
             </div>
           </div>
@@ -74,7 +84,7 @@
 
             <div class="card text-white" id="carddays">
               <div class="card-body">
-                    <h5 class="card-title text-center font-weight-light mt-4" >Lockdown Countdown</h5>
+                    <h5 class="card-title text-center font-weight-light mt-4 " id="countdownfont" >Lockdown Countdown</h5>
                     <div class="card-body text-center">
                         <p class="card-text" id="Contdowndays"></p>
                     </div>
@@ -84,7 +94,7 @@
 
             <div class="card text-white" id="cardpositive">
               <div class="card-body">
-                    <h5 class="card-title text-center font-weight-light mt-4">Confirmed Patients</h5>
+                    <h5 class="card-title text-center font-weight-light mt-4 " id="confirmedfont">Confirmed Patients</h5>
                     <div class="card-body text-center">
                         <p class="card-text" id="positive">12760</p>
                     </div>
@@ -94,7 +104,7 @@
 
             <div class="card text-white " id="cardrecovered">
               <div class="card-body">
-                <h5 class="card-title text-center font-weight-light mt-4">Recovered Patients</h5>
+                <h5 class="card-title text-center font-weight-light mt-4" id="recoveredfont">Recovered Patients</h5>
                 <div class="card-body text-center">
                 <p class="card-text" id="recovered">1513</p>
                 </div>
@@ -104,7 +114,7 @@
 
             <div class="card text-white" id="carddeceased">
                 <div class="card-body">
-                  <h5 class="card-title text-center font-weight-light mt-4">Deceased Patients</h5>
+                  <h5 class="card-title text-center font-weight-light mt-4" id="deceasedfont">Deceased Patients</h5>
                   <div class="card-body text-center">
                   <p class="card-text" id="deceased">426</p>
                   </div>
@@ -131,19 +141,20 @@
     <div class="container text-center">
         <div class="row justify-content-center">
           <div class="col-md-7">
-            <h1 class="font-weight-light mt-4 text-white" id="newsid">Tips for Lockdown</h1>
-            <a class="lead text-white-50" href="https://medium.com/@asdsurya/how-to-be-productive-in-lock-down-1f81751647ac">1. How to effectively use the Lockdown time?</a>          </div>
+            <h1 class="font-weight-light mt-4" id="newsid">Tips for Lockdown</h1>
+            <a class="lead " id="news1" href="https://medium.com/@asdsurya/how-to-be-productive-in-lock-down-1f81751647ac">1. How to effectively use the Lockdown time?</a>          </div>
         </div>
       </div>
     </div>
 
       <br>
+    </body>
 
-    <footer id="sticky-footer" style="background-color: #292b2c;">
+    <footer id="sticky-footer" >
         <div class="container ">
-          <small><p id="footertext"> Copyright © 2020 | Designed with <i class='fas fa-heart' style='font-size:15px;color:red'></i> by Suryakumar | Data from  <i class='fab fa-twitter'style='font-size:15px;color:blue'></i><a href="https://twitter.com/MoHFW_INDIA">@MoHFW_INDIA</a></p></small>
+          <small><p id="footertext" > Copyright © 2020 | Designed with <i class='fas fa-heart' style='font-size:15px;color:red'></i> by Suryakumar | Data from  <i class='fab fa-twitter'style='font-size:15px;color:blue'></i><a href="https://twitter.com/MoHFW_INDIA">@MoHFW_INDIA</a></p></small>
         </div>
     </footer>
    
-  </body>
+
 </html>
