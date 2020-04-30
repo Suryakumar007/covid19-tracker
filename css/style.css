@@ -1,23 +1,40 @@
-html,
-body {
-  height: 100%;
-}
-
-
-#sticky-footer {
-  flex-shrink: none;
-  
-}
-
-#footertext
+:root
 {
-  color: #ACACAC;
-  border-top:0.5px solid #ACACAC;
+  --background-color: #121212;
+  --secondary-color: #272727;
+  --card-color:#272727;
+  --font-color: #ececec;
 }
 
-body {
-  background: #292b2c;
-  /*background: linear-gradient(to right, rgb(240, 245, 247), rgb(124, 126, 128));*/
+body.light {
+  --background-color: #f5f5f5;
+  --secondary-color: #8d8d8d;
+  --card-color:#8d8d8d;
+  --font-color: #121212;
+}
+
+body 
+{
+  background: var(--background-color);
+  transition: background 0.2s linear;
+}
+
+#navbar
+{
+    background-color: var(--secondary-color);
+}
+
+#navbarTN,#navbarInd,#navbarNews,#navbartitle,#updatedEntity,#updatedtime,#countdownfont,#newsid,#news1,#confirmedfont,#recoveredfont,#deceasedfont,#footertext
+{
+    color: var(--font-color);
+}
+
+
+#carddays,#cardpositive,#cardrecovered,#carddeceased
+{
+  width: 220px;
+  background-color: var(--card-color) ;
+  box-shadow:0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #cardparent
@@ -26,16 +43,9 @@ body {
   display: flex;
 } 
 
-#carddays,#cardpositive,#cardrecovered,#carddeceased
-{
-  width: 220px;
-  background-color: #292b2c ;
-  box-shadow:0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 #Contdowndays
 {
-  color: goldenrod;
+  color: #ff6f00;
   font-size: large;
 }
 #positive
@@ -50,6 +60,60 @@ body {
 }
 #deceased
 {
-  color: dimgrey;
+  color:#000000;
   font-size: xx-large;
+}
+
+#sticky-footer 
+{
+  flex-shrink: none;    
+}
+  
+#footertext
+{
+border-top:0.5px solid #ACACAC;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+  background-color:var(--background-color);
+  top: 5px;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 3px;
+	position: relative;
+	height: 20px;
+	width: 50px;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	left: 2px;
+	height: 20px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
 }
