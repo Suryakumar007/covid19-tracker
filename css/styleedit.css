@@ -30,7 +30,7 @@ body
 }
 
 
-#carddays,#cardpositive,#cardrecovered,#carddeceased
+#carddays,#cardpositive,#cardrecovered,#carddeceased,#cardactive
 {
   width: 220px;
   background-color: var(--card-color) ;
@@ -50,17 +50,22 @@ body
 }
 #positive
 {
-  color: rgb(236, 29, 29);
+  color: #c2185b;
   font-size: xx-large;
 }
 #recovered
 {
-  color: green;
+  color: #4fc3f7;
   font-size: xx-large;
 }
 #deceased
 {
-  color:#000000;
+  color: #ff1744;
+  font-size: xx-large;
+}
+#active
+{
+  color: rgb(236, 29, 29);
   font-size: xx-large;
 }
 

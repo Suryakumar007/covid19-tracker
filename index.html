@@ -26,9 +26,9 @@
     <title>Covid-19 Tracker</title>
 
     <!-- Custom files-->
-    <link rel="stylesheet" href="css/styleedit.css">
-    <!--<script src="js/app.js"></script>-->
-    <script src="js/appcheck.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
+    <!--script src="js/appcheck.js"></script>-->
   </head>
 
   <body >
@@ -84,7 +84,6 @@
 
       <div class="row" id="cardparent">
         <div class="card-deck">
-
             <div class="card text-white" id="carddays">
               <div class="card-body">
                     <h5 class="card-title text-center font-weight-light mt-4 " id="countdownfont" >Lockdown Countdown</h5>
@@ -97,7 +96,7 @@
 
             <div class="card text-white" id="cardpositive">
               <div class="card-body">
-                    <h5 class="card-title text-center font-weight-light mt-4 " id="confirmedfont">Confirmed Patients</h5>
+                    <h5 class="card-title text-center font-weight-light mt-4 " id="confirmedfont">Total Confirmed Patients</h5>
                     <div class="card-body text-center">
                         <p class="card-text" id="positive">12760</p>
                     </div>
@@ -107,7 +106,7 @@
 
             <div class="card text-white " id="cardrecovered">
               <div class="card-body">
-                <h5 class="card-title text-center font-weight-light mt-4" id="recoveredfont">Recovered Patients</h5>
+                <h5 class="card-title text-center font-weight-light mt-4" id="recoveredfont">Total Recovered Patients</h5>
                 <div class="card-body text-center">
                 <p class="card-text" id="recovered">1513</p>
                 </div>
@@ -115,9 +114,19 @@
             </div>
 
 
+            <div class="card text-white" id="cardactive">
+              <div class="card-body">
+                    <h5 class="card-title text-center font-weight-light mt-4"> Current Active Patients</h5>
+                    <div class="card-body text-center">
+                        <p class="card-text" id="active">12760</p>
+                    </div>
+              </div>
+            </div>
+
+
             <div class="card text-white" id="carddeceased">
                 <div class="card-body">
-                  <h5 class="card-title text-center font-weight-light mt-4" id="deceasedfont">Deceased Patients</h5>
+                  <h5 class="card-title text-center font-weight-light mt-4" id="deceasedfont">Total Deceased Patients</h5>
                   <div class="card-body text-center">
                   <p class="card-text" id="deceased">426</p>
                   </div>

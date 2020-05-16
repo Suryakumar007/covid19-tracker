@@ -1,18 +1,6 @@
 document.addEventListener('DOMContentLoaded',function()
 {
-    const req= new XMLHttpRequest();
-    req.open('GET','https://api.covid19india.org/data.json',true);
-    req.send();
-    req.onload=function(){
-        const json=JSON.parse(req.responseText);
-        //console.log(json.statewise[3].confirmed);
-        document.getElementById('positive').innerHTML=json.statewise[3].confirmed;
-        document.getElementById('recovered').innerHTML=json.statewise[3].recovered;
-        document.getElementById('deceased').innerHTML=json.statewise[3].deaths;
-        document.getElementById('updatedtime').innerHTML="Updated as of "+json.statewise[3].lastupdatedtime;
-    }
-
-    loadTNChart();
+    loadTN();
     loadCountdown();
 }
 );
@@ -77,10 +65,16 @@ function loadIndChart()
 
         for(var i in IndJson.cases_time_series)
         {
-            Indpositive.push(IndJson.cases_time_series[i].totalconfirmed);
-            Indrecovered.push(IndJson.cases_time_series[i].totalrecovered);
-            Inddeceased.push(IndJson.cases_time_series[i].totaldeceased);
-            Inddates.push(IndJson.cases_time_series[i].date.substring(0,6));
+            if(parseInt(IndJson.cases_time_series[i].totalconfirmed)>6)
+            {
+
+                Indpositive.push(IndJson.cases_time_series[i].dailyconfirmed);
+                Indrecovered.push(IndJson.cases_time_series[i].dailyrecovered);
+                Inddeceased.push(IndJson.cases_time_series[i].dailydeceased);
+                Inddates.push(IndJson.cases_time_series[i].date.substring(0,6));
+
+            }
+            
         }
 
         if(window.myChart instanceof Chart)
@@ -93,60 +87,32 @@ function loadIndChart()
 
 
         window.myChart=new Chart(ctx,{
-            type:'line',
+            type:'bar',
             data:{
                 labels:Inddates,
                 datasets:[
                     
                     {
-                        data:Inddeceased,
-                        label:"Deceased",
-                        borderColor: 'grey',
-                        pointBorderColor: 'grey',
-                        pointBackgroundColor: 'grey',
-                        pointHoverBackgroundColor: 'grey',
-                        pointHoverBorderColor: 'grey',
-                        pointBorderWidth: 5,
-                        pointHoverRadius: 10,
-                        pointHoverBorderWidth: 1,
-                        pointRadius: 3,
-                        fill: false,
-                        backgroundColor:"grey",
+                        data:Indpositive,
+                        label: "Confirmed",
+                        fill: true,
+                        backgroundColor: "#c2185b",
                         borderWidth: 4
                     },       
                     
                     {
                         data:Indrecovered,
                         label: "Recovered",
-                        borderColor: "#138207",
-                        pointBorderColor: "#138207",
-                        pointBackgroundColor: "#138207",
-                        pointHoverBackgroundColor: "#138207",
-                        pointHoverBorderColor: "#138207",
-                        pointBorderWidth: 5,
-                        pointHoverRadius: 10,
-                        pointHoverBorderWidth: 1,
-                        pointRadius: 3,
-                        fill: false,
-                        backgroundColor: "#138207",
-                        borderWidth: 4
+                        fill: true,
+                        backgroundColor: "#4fc3f7",
                     }, 
+
                     {
-                        data:Indpositive,
-                        label: "Positive",
-                        borderColor: 'red',
-                        pointBorderColor: 'red',
-                        pointBackgroundColor: 'red',
-                        pointHoverBackgroundColor: 'red',
-                        pointHoverBorderColor: 'red',
-                        pointBorderWidth: 3,
-                        pointHoverRadius: 10,
-                        pointHoverBorderWidth: 1,
-                        pointRadius: 3,
-                        fill: false,
-                        backgroundColor: "#FF1744",
-                        borderWidth: 4
-                    },             
+                        data:Inddeceased,
+                        label:"Deceased",
+                        fill: true,
+                        backgroundColor:"#ff1744",
+                    },                     
                 
                 ]
                 
@@ -154,6 +120,14 @@ function loadIndChart()
             options:{
                 maintainAspectRatio:false,
                 responsive:true,
+                scales: {
+                    xAxes: [{
+                        stacked: true,
+                    }],
+                    yAxes: [{
+                        stacked: true
+                    }]
+                },            
                 animation: {
                     easing: "easeInQuart"
                 }
@@ -199,18 +173,6 @@ function loadTNChart()
             
         }
     
-        
-        for(var i=1;i<tnpositive.length;i++)
-        {
-            tnpositive[i]=parseInt(tnpositive[i-1]) + parseInt(tnpositive[i]);
-            tnrecovered[i]=parseInt(tnrecovered[i-1]) + parseInt(tnrecovered[i]);
-            tndeceased[i]=parseInt(tndeceased[i-1]) + parseInt(tndeceased[i]);
-        }
-
-        console.log(tnpositive);
-        console.log(tnrecovered);
-        console.log(tndeceased);
-        console.log(tndates);
 
         if(window.myChart instanceof Chart)
         {
@@ -220,60 +182,32 @@ function loadTNChart()
         var ctx = document.getElementById('myChart').getContext("2d");
 
         window.myChart=new Chart(ctx,{
-        type:'line',
+        type:'bar',
         data:{
             labels:tndates,
             datasets:[
                 
                 {
-                    data:tndeceased,
-                    label:"Deceased",
-                    borderColor: 'grey',
-                    pointBorderColor: 'grey',
-                    pointBackgroundColor: 'grey',
-                    pointHoverBackgroundColor: 'grey',
-                    pointHoverBorderColor: 'grey',
-                    pointBorderWidth: 3,
-                    pointHoverRadius: 10,
-                    pointHoverBorderWidth: 1,
-                    pointRadius: 3,
-                    fill: false,
-                    backgroundColor:'grey',
-                    borderWidth: 4
-                },       
+                    data:tnpositive,
+                    label: "Confirmed Cases",
+                    fill: true,
+                    backgroundColor: "#c2185b",
+                },         
+                   
                 
                 {
                     data:tnrecovered,
                     label: "Recovered",
-                    borderColor: "#138207",
-                    pointBorderColor:"#138207",
-                    pointBackgroundColor: "#138207",
-                    pointHoverBackgroundColor: "#138207",
-                    pointHoverBorderColor: "#138207",
-                    pointBorderWidth: 3,
-                    pointHoverRadius: 10,
-                    pointHoverBorderWidth: 1,
-                    pointRadius: 3,
-                    fill: false,
-                    backgroundColor: "#138207",
-                    borderWidth: 4
-                }, 
+                    fill: true,
+                    backgroundColor: "#4fc3f7",
+                },  
+                
                 {
-                    data:tnpositive,
-                    label: "Positive",
-                    borderColor: 'red',
-                    pointBorderColor: 'red',
-                    pointBackgroundColor: 'red',
-                    pointHoverBackgroundColor: 'red',
-                    pointHoverBorderColor: 'red',
-                    pointBorderWidth: 3,
-                    pointHoverRadius: 10,
-                    pointHoverBorderWidth: 1,
-                    pointRadius: 3,
-                    fill: false ,
-                    backgroundColor: "#FF1744",
-                    borderWidth: 4
-                },             
+                    data:tndeceased,
+                    label:"Deceased",
+                    fill: true,
+                    backgroundColor:"#ff1744",
+                },      
             
             ]
             
@@ -281,6 +215,18 @@ function loadTNChart()
         options:{
             maintainAspectRatio:false,
             responsive:true,
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        drawOnChartArea: false
+                    }
+                }],
+                yAxes: [{
+                    stacked: true,
+                    
+                }]
+            },            
             animation: {
                 easing: "easeInQuart"
             }
@@ -293,22 +239,33 @@ function loadTNChart()
 }
 
 function loadTN(){
-    console.log("Got it");
     const req= new XMLHttpRequest();
     req.open('GET','https://api.covid19india.org/data.json',true);
     req.send();
     req.onload=function(){
         const json=JSON.parse(req.responseText);
-        //console.log(json.statewise[3].confirmed);
-        document.getElementById('positive').innerHTML=json.statewise[3].confirmed;
-        document.getElementById('recovered').innerHTML=json.statewise[3].recovered;
-        document.getElementById('deceased').innerHTML=json.statewise[3].deaths;
-        document.getElementById('updatedtime').innerHTML="Updated as of "+json.statewise[3].lastupdatedtime;
-        document.getElementById('updatedEntity').innerHTML="COVID-19 - TN";
+        var tempConfirmed,tempRecovered,tempDeceased,tempDate,tempActive;
+
+        for(var i in json.statewise)
+        {
+            if(json.statewise[i].statecode=="TN")
+            {
+                tempConfirmed=json.statewise[i].confirmed;
+                tempActive=json.statewise[i].active;
+                tempRecovered=json.statewise[i].recovered;
+                tempDeceased=json.statewise[i].deaths;
+                tempDate=json.statewise[i].lastupdatedtime;
+
+            }
+        }
+        document.getElementById('positive').innerHTML=tempConfirmed;
+        document.getElementById('active').innerHTML=tempActive;
+        document.getElementById('recovered').innerHTML=tempRecovered;
+        document.getElementById('deceased').innerHTML=tempDeceased;
+        document.getElementById('updatedtime').innerHTML="Updated as of "+tempDate;
     }
 
     loadTNChart();
-
 }
 
 function loadInd(){
@@ -318,13 +275,12 @@ function loadInd(){
     req.send();
     req.onload=function(){
         const json=JSON.parse(req.responseText);
-        console.log(json.statewise[0].confirmed);
         document.getElementById('positive').innerHTML=json.statewise[0].confirmed;
+        document.getElementById('active').innerHTML=json.statewise[0].active;
         document.getElementById('recovered').innerHTML=json.statewise[0].recovered;
         document.getElementById('deceased').innerHTML=json.statewise[0].deaths;
         document.getElementById('updatedtime').innerHTML="Updated as of "+json.statewise[0].lastupdatedtime;
         document.getElementById('updatedEntity').innerHTML="COVID-19 - INDIA";
-
 
         loadIndChart();
     }
