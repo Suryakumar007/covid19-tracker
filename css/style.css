@@ -5,7 +5,7 @@
   --card-color:#121212;
   --font-color: #ececec;
   --font-weight: lighter;
-  --box-shadow: 0 10px 20px 0 rgba(43, 36, 36, 0.2), 0 10px 20px 0 rgba(63, 62, 62, 0.19);
+  --box-shadow: 0 10px 50px 0 rgba(61, 52, 52, 0.2), 0 10px 20px 0 rgba(63, 62, 62, 0.19);
     
   /*0 10px 20px 0 rgba(97, 97, 97, 0.2), 0 10px 20px 0 rgba(42, 196, 235, 0.19);*/
 }
