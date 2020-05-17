@@ -2,15 +2,21 @@
 {
   --background-color: #121212;
   --secondary-color: #272727;
-  --card-color:#272727;
+  --card-color:#121212;
   --font-color: #ececec;
+  --font-weight: lighter;
+  --box-shadow: 0 10px 20px 0 rgba(43, 36, 36, 0.2), 0 10px 20px 0 rgba(63, 62, 62, 0.19);
+    
+  /*0 10px 20px 0 rgba(97, 97, 97, 0.2), 0 10px 20px 0 rgba(42, 196, 235, 0.19);*/
 }
 
 body.light {
   --background-color: #f5f5f5;
   --secondary-color: #8d8d8d;
-  --card-color:#8d8d8d;
+  --card-color:#f5f5f5;
   --font-color: #121212;
+  --font-weight: 350;
+  --box-shadow:0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 body 
@@ -24,7 +30,13 @@ body
     background-color: var(--secondary-color);
 }
 
-#navbarTN,#navbarInd,#navbarNews,#navbartitle,#updatedEntity,#updatedtime,#countdownfont,#newsid,#news1,#confirmedfont,#recoveredfont,#deceasedfont,#footertext
+#countdownfont,#confirmedfont,#recoveredfont,#activefont,#deceasedfont
+{
+  color: var(--font-color);
+  font-weight: var(--font-weight);
+}
+
+#navbarTN,#navbarInd,#navbarNews,#navbartitle,#updatedEntity,#updatedtime,#chartTitle,#chartCaption,#newsid,#news1,#footertext
 {
     color: var(--font-color);
 }
@@ -34,7 +46,7 @@ body
 {
   width: 220px;
   background-color: var(--card-color) ;
-  box-shadow:0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: var(--box-shadow);
 }
 
 #cardparent

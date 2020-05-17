@@ -191,7 +191,7 @@ function loadTNChart()
                 
                 {
                     data:tnpositive,
-                    label: "Confirmed Cases",
+                    label: "Confirmed",
                     fill: true,
                     backgroundColor: "#c2185b",
                 },         
