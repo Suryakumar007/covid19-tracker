@@ -59,13 +59,14 @@
                   <div >
                     <input type="checkbox" class="checkbox" id="chk" />
                     <label class="label" for="chk">
-                      <i class="fas fa-moon"></i>
                       <i class="fas fa-sun"></i>
+                      <i class="fas fa-moon"></i>
                       <div class="ball"></div>
                     </label>
                   </div>
                 </li>
             </ul>
+        </div>
       </nav>
 
 
@@ -77,8 +78,8 @@
                 <p class="lead " id="updatedtime">Updated as of 01 April 2020</p>
               </div>
             </div>
-          </div>
         </div>
+      </div>
 
         <br><br><br>
 
@@ -144,6 +145,27 @@
         <div class="container text-center">
             <div class="row justify-content-center">
               <div class="col-md-7">
+                <h1 class="font-weight-light mt-4 " id="totalchartTitle">COVID-19 Cases till Date</h1>
+                <p class="lead " id="totalchartCaption">Total number of Confirmed, Recovered and Deceased patients till date</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-1">
+          <div class="col-sm">
+              <canvas id="totalChart" style="height: 450px;"></canvas>
+          </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <div class="container-fluid" style="margin-top:40px">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+              <div class="col-md-7">
                 <h1 class="font-weight-light mt-4 " id="chartTitle">COVID-19 Cases on Individual Days</h1>
                 <p class="lead " id="chartCaption">Number of Confirmed, Recovered and Deceased patients on daily basis</p>
               </div>
@@ -153,7 +175,7 @@
 
    <div class="row mb-1">
     <div class="col-sm">
-        <canvas id="myChart" style="width: 700px; height: 450px;"></canvas>
+        <canvas id="myChart" style="height: 450px;"></canvas>
     </div>
 </div>
 

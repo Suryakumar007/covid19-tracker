@@ -22,7 +22,7 @@ $(document).ready(function () {
 function loadCountdown()
 {
 
-    var countDownDate = new Date("May 31, 2020 06:00:00").getTime();
+    var countDownDate = new Date("May 3, 2020 06:00:00").getTime();
 
     var x = setInterval(function() 
     {
