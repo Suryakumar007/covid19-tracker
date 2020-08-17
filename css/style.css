@@ -1,83 +1,92 @@
-:root
-{
-  --background-color: #f5f5f5;
-  --secondary-color: gray;
-  --card-color:#f5f5f5;
-  --font-color: #121212;
-  --font-weight: 350;
-  --box-shadow:0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-    /*#8d8d8d;*/
-}
-
-body.dark {
-
+:root {
   --background-color: #121212;
   --secondary-color: #272727;
-  --card-color:#121212;
+  --card-color: #121212;
   --font-color: #ececec;
   --font-weight: lighter;
   --box-shadow: 0 10px 40px 0 #000000;
-
+  /*#8d8d8d;*/
 }
 
-body 
-{
+body.dark {
+  --background-color: #f5f5f5;
+  --secondary-color: gray;
+  --card-color: #f5f5f5;
+  --font-color: #121212;
+  --font-weight: 350;
+  --box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2),
+    0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body {
   background: var(--background-color);
   transition: background 0.2s linear;
 }
 
-#navbar
-{
-    background-color: var(--secondary-color);
+#navbar {
+  background-color: var(--secondary-color);
 }
 
-#countdownfont,#confirmedfont,#recoveredfont,#activefont,#deceasedfont
-{
+#countdownfont,
+#confirmedfont,
+#recoveredfont,
+#activefont,
+#deceasedfont {
   color: var(--font-color);
   font-weight: var(--font-weight);
 }
 
-#navbarTN,#navbarInd,#navbarNews,#navbartitle,#updatedEntity,#updatedtime,#totalchartTitle,#chartTitle,#chartCaption,#totalchartCaption,#newsid,#news1,#footertext
-{
-    color: var(--font-color);
+#navbarTN,
+#navbarInd,
+#navbarNews,
+#navbartitle,
+#updatedEntity,
+#updatedtime,
+#totalchartTitle,
+#chartTitle,
+#chartCaption,
+#totalchartCaption,
+#newsid,
+#news1,
+#footertext,
+#active-percent,
+#recovered-percent,
+#deceased-percent {
+  color: var(--font-color);
 }
 
-
-#carddays,#cardpositive,#cardrecovered,#carddeceased,#cardactive
-{
+#carddays,
+#cardpositive,
+#cardrecovered,
+#carddeceased,
+#cardactive {
   width: 220px;
-  background-color: var(--card-color) ;
+  background-color: var(--card-color);
   box-shadow: var(--box-shadow);
 }
 
-#cardparent
-{
+#cardparent {
   justify-content: center;
   display: flex;
-} 
+}
 
-#Contdowndays
-{
+#Contdowndays {
   color: #ff6f00;
   font-size: large;
 }
-#positive
-{
+#positive {
   color: #c2185b;
   font-size: xx-large;
 }
-#recovered
-{
+#recovered {
   color: #4fc3f7;
   font-size: xx-large;
 }
-#deceased
-{
+#deceased {
   color: #ff1744;
   font-size: xx-large;
 }
-#active
-{
+#active {
   color: rgb(236, 29, 29);
   font-size: xx-large;
 }
@@ -87,56 +96,53 @@ body
   max-width: 100%;
 }*/
 
-#sticky-footer 
-{
-  flex-shrink: none;    
+#sticky-footer {
+  flex-shrink: none;
 }
-  
-#footertext
-{
-border-top:0.5px solid #ACACAC;
+
+#footertext {
+  border-top: 0.5px solid #acacac;
 }
 
 .checkbox {
-	opacity: 0;
-	position: absolute;
+  opacity: 0;
+  position: absolute;
 }
 
 .label {
-  background-color:var(--background-color);
+  background-color: var(--background-color);
   top: 5px;
-	border-radius: 50px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 3px;
-	position: relative;
-	height: 20px;
-	width: 50px;
-	transform: scale(1.5);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+  position: relative;
+  height: 20px;
+  width: 50px;
+  transform: scale(1.5);
 }
 
 .label .ball {
-	background-color: #fff;
-	border-radius: 50%;
-	position: absolute;
-	left: 2px;
-	height: 20px;
-	width: 22px;
-	transform: translateX(0px);
-	transition: transform 0.2s linear;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  height: 20px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
 }
 
 .checkbox:checked + .label .ball {
-	transform: translateX(24px);
+  transform: translateX(24px);
 }
 
-
 .fa-moon {
-	color: #f1c40f;
+  color: #f1c40f;
 }
 
 .fa-sun {
-	color: #f39c12;
+  color: #f39c12;
 }

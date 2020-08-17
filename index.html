@@ -1,13 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 
     <!-- Chart.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
@@ -16,190 +23,254 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/8d7dc38c70.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <title>Covid-19 Tracker</title>
 
     <!-- Custom files-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/app.js"></script>
     <!--script src="js/appcheck.js"></script>-->
   </head>
 
-  <body >
-
+  <body>
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" id="navbar">
-        <a class="navbar-brand" href="#" id="navbartitle">COVID-19 Info</a>
+      <a class="navbar-brand" href="#" id="navbartitle">COVID-19 Info</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
-            <ul class="nav navbar-nav ">
-                <li class="nav-item active">
-                    <a class="nav-link" id="navbarTN" href="#" onclick='loadTN()' >TamilNadu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " id="navbarInd" href="#" onclick='loadInd()'>India</a>
-                </li>
+      <div
+        class="collapse navbar-collapse justify-content-between"
+        id="collapsibleNavbar"
+      >
+        <ul class="nav navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" id="navbarTN" href="#" onclick="loadTN()"
+              >TamilNadu</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="navbarInd" href="#" onclick="loadInd()"
+              >India</a
+            >
+          </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" id="navbarNews" href="#newsid" >Tips</a>
-                </li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" id="navbarNews" href="#newsid">Tips</a>
+          </li>
+        </ul>
 
-            <ul class="nav navbar-nav ">
-                <li class="nav-item">
-                  <div >
-                    <input type="checkbox" class="checkbox" id="chk" />
-                    <label class="label" for="chk">
-                      <i class="fas fa-sun"></i>
-                      <i class="fas fa-moon"></i>
-                      <div class="ball"></div>
-                    </label>
-                  </div>
-                </li>
-            </ul>
-        </div>
-      </nav>
-
-
-      <div class="container-fluid" style="margin-top:70px">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-              <div class="col-md-7">
-                <h1 class="font-weight-light mt-4 " id="updatedEntity">COVID-19 - TN</h1>
-                <p class="lead " id="updatedtime">Updated as of 01 April 2020</p>
-              </div>
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <div>
+              <input type="checkbox" class="checkbox" id="chk" />
+              <label class="label" for="chk">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+              </label>
             </div>
-        </div>
+          </li>
+        </ul>
       </div>
+    </nav>
 
-        <br><br><br>
-
-      <div class="row" id="cardparent">
-        <div class="card-deck">
-            <div class="card text-white" id="carddays">
-              <div class="card-body">
-                    <h5 class="card-title text-center mt-4 " id="countdownfont" >Lockdown Countdown</h5>
-                    <div class="card-body text-center">
-                        <p class="card-text" id="Contdowndays"></p>
-                    </div>
-              </div>
-            </div>
-
-
-            <div class="card text-white" id="cardpositive">
-              <div class="card-body">
-                    <h5 class="card-title text-center mt-4 " id="confirmedfont">Total Confirmed Patients</h5>
-                    <div class="card-body text-center">
-                        <p class="card-text" id="positive">12760</p>
-                    </div>
-              </div>
-            </div>
-
-
-            <div class="card text-white " id="cardrecovered">
-              <div class="card-body">
-                <h5 class="card-title text-center mt-4" id="recoveredfont">Total Recovered Patients</h5>
-                <div class="card-body text-center">
-                <p class="card-text" id="recovered">1513</p>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="card text-white" id="cardactive">
-              <div class="card-body">
-                    <h5 class="card-title text-center mt-4" id="activefont"> Current Active Patients</h5>
-                    <div class="card-body text-center">
-                        <p class="card-text" id="active">12760</p>
-                    </div>
-              </div>
-            </div>
-
-
-            <div class="card text-white" id="carddeceased">
-                <div class="card-body">
-                  <h5 class="card-title text-center mt-4" id="deceasedfont">Total Deceased Patients</h5>
-                  <div class="card-body text-center">
-                  <p class="card-text" id="deceased">426</p>
-                  </div>
-                </div>
-              </div>
-          </div>
-      </div>
-
-
-      <br>
-      <br>
-      <br>
-
-      <div class="container-fluid" style="margin-top:40px">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-              <div class="col-md-7">
-                <h1 class="font-weight-light mt-4 " id="totalchartTitle">COVID-19 Cases till Date</h1>
-                <p class="lead " id="totalchartCaption">Total number of Confirmed, Recovered and Deceased patients till date</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-1">
-          <div class="col-sm">
-              <canvas id="totalChart" style="height: 450px;"></canvas>
-          </div>
-      </div>
-
-      <br>
-      <br>
-      <br>
-
-      <div class="container-fluid" style="margin-top:40px">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-              <div class="col-md-7">
-                <h1 class="font-weight-light mt-4 " id="chartTitle">COVID-19 Cases on Individual Days</h1>
-                <p class="lead " id="chartCaption">Number of Confirmed, Recovered and Deceased patients on daily basis</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-   <div class="row mb-1">
-    <div class="col-sm">
-        <canvas id="myChart" style="height: 450px;"></canvas>
-    </div>
-</div>
-
-<br>
-<br>
-
-<div class="container-fluid">
-    <div class="container text-center">
+    <div class="container-fluid" style="margin-top: 70px;">
+      <div class="container text-center">
         <div class="row justify-content-center">
           <div class="col-md-7">
-            <h1 class="font-weight-light mt-4" id="newsid">Tips for Lockdown</h1>
-            <a class="lead " id="news1" href="https://medium.com/@asdsurya/how-to-be-productive-in-lock-down-1f81751647ac">1. How to effectively use the Lockdown time?</a>          </div>
+            <h1 class="font-weight-light mt-4" id="updatedEntity">
+              COVID-19 - TN
+            </h1>
+            <p class="lead" id="updatedtime">Updated as of 01 April 2020</p>
+          </div>
         </div>
       </div>
     </div>
 
-      <br>
-    </body>
+    <br /><br /><br />
 
-    <footer id="sticky-footer" >
-        <div class="container ">
-          <small><p id="footertext" > Copyright © 2020 | Designed with <i class='fas fa-heart' style='font-size:15px;color:red'></i> by <a href="https://suryakumar007.github.io/web/" style="text-decoration: none;">Suryakumar</a>  | Data from  <i class='fab fa-twitter'style='font-size:15px;color:blue'></i><a href="https://twitter.com/MoHFW_INDIA">@MoHFW_INDIA</a></p></small>
+    <div class="row" id="cardparent">
+      <div class="card-deck">
+        <div class="card text-white" id="carddays">
+          <div class="card-body">
+            <h5 class="card-title text-center mt-4" id="countdownfont">
+              Lockdown Countdown
+            </h5>
+            <div class="card-body text-center">
+              <p class="card-text" id="Contdowndays"></p>
+            </div>
+          </div>
         </div>
-    </footer>
-   
 
+        <div class="card text-white" id="cardpositive">
+          <div class="card-body">
+            <h5 class="card-title text-center mt-4" id="confirmedfont">
+              Total Confirmed Patients
+            </h5>
+            <div class="card-body text-center">
+              <p class="card-text" id="positive">12760</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card text-white" id="cardrecovered">
+          <div class="card-body">
+            <h5 class="card-title text-center mt-4" id="recoveredfont">
+              Total Recovered Patients
+            </h5>
+            <div class="card-body text-center">
+              <p class="card-text" id="recovered">1513</p>
+              <p class="card-text" id="recovered-percent">0</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card text-white" id="cardactive">
+          <div class="card-body">
+            <h5 class="card-title text-center mt-4" id="activefont">
+              Current Active Patients
+            </h5>
+            <div class="card-body text-center">
+              <p class="card-text" id="active">12760</p>
+              <p class="card-text" id="active-percent">12760</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card text-white" id="carddeceased">
+          <div class="card-body">
+            <h5 class="card-title text-center mt-4" id="deceasedfont">
+              Total Deceased Patients
+            </h5>
+            <div class="card-body text-center">
+              <p class="card-text" id="deceased">426</p>
+              <p class="card-text" id="deceased-percent">426</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="container-fluid" style="margin-top: 40px;">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+            <h1 class="font-weight-light mt-4" id="totalchartTitle">
+              COVID-19 Cases till Date
+            </h1>
+            <p class="lead" id="totalchartCaption">
+              Total number of Confirmed, Recovered and Deceased patients till
+              date
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-1">
+      <div class="col-sm">
+        <canvas id="totalChart" style="height: 450px;"></canvas>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="container-fluid" style="margin-top: 40px;">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+            <h1 class="font-weight-light mt-4" id="chartTitle">
+              COVID-19 Cases on Individual Days
+            </h1>
+            <p class="lead" id="chartCaption">
+              Number of Confirmed, Recovered and Deceased patients on daily
+              basis
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-1">
+      <div class="col-sm">
+        <canvas id="myChart" style="height: 450px;"></canvas>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="container-fluid">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+            <h1 class="font-weight-light mt-4" id="newsid">
+              Tips for Lockdown
+            </h1>
+            <a
+              class="lead"
+              id="news1"
+              href="https://medium.com/@asdsurya/how-to-be-productive-in-lock-down-1f81751647ac"
+              >1. How to effectively use the Lockdown time?</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+  </body>
+
+  <footer id="sticky-footer">
+    <div class="container">
+      <small
+        ><p id="footertext">
+          Copyright © 2020 | Designed with
+          <i class="fas fa-heart" style="font-size: 15px; color: red;"></i> by
+          <a
+            href="https://suryakumar007.github.io/web/"
+            style="text-decoration: none;"
+            >Suryakumar</a
+          >
+          | Data from
+          <i class="fab fa-twitter" style="font-size: 15px; color: blue;"></i
+          ><a href="https://twitter.com/MoHFW_INDIA">@MoHFW_INDIA</a>
+        </p></small
+      >
+    </div>
+  </footer>
 </html>
