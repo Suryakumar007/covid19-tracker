@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 function loadCountdown() {
 
-    var countDownDate = new Date("August 31, 2020 06:00:00").getTime();
+    var countDownDate = new Date("February 28, 2021 06:00:00").getTime();
 
     var x = setInterval(function () {
 
@@ -416,6 +416,11 @@ function loadTN() {
         document.getElementById('deceased').innerHTML = new Intl.NumberFormat('en-IN').format(tempDeceased)
         document.getElementById('updatedtime').innerHTML = "Updated as of " + tempDate;
         document.getElementById('updatedEntity').innerHTML = "COVID-19 - TN";
+        console.log(typeof(tempRecovered))
+        console.log((tempRecovered))
+
+        console.log((tempRecovered/tempConfirmed))
+
 
         document.getElementById('recovered-percent').innerHTML = "(" + ((tempRecovered / tempConfirmed) * 100).toFixed(2) + " %)";
         document.getElementById('active-percent').innerHTML = "(" + ((tempActive / tempConfirmed) * 100).toFixed(2) + " %)";
@@ -436,24 +441,28 @@ function loadInd() {
         const json = JSON.parse(req.responseText);
 
         var tempIndPositive, tempIndRecovered, tempIndActive, tempIndDeceased;
-        tempIndPositive = new Intl.NumberFormat('en-IN').format(json.statewise[0].confirmed);
-        tempIndActive = new Intl.NumberFormat('en-IN').format(json.statewise[0].active);
-        tempIndRecovered = new Intl.NumberFormat('en-IN').format(json.statewise[0].recovered);
-        tempIndDeceased = new Intl.NumberFormat('en-IN').format(json.statewise[0].deaths)
+        tempIndPositive = json.statewise[0].confirmed;
+        tempIndActive = json.statewise[0].active;
+        tempIndRecovered = json.statewise[0].recovered;
+        tempIndDeceased = json.statewise[0].deaths;
 
-        document.getElementById('positive').innerHTML = tempIndPositive;
-        document.getElementById('active').innerHTML = tempIndActive;
-        document.getElementById('recovered').innerHTML = tempIndRecovered;
-        document.getElementById('deceased').innerHTML = tempIndDeceased;
+        document.getElementById('positive').innerHTML = new Intl.NumberFormat('en-IN').format(tempIndPositive);
+        document.getElementById('active').innerHTML = new Intl.NumberFormat('en-IN').format(tempIndActive);
+        document.getElementById('recovered').innerHTML = new Intl.NumberFormat('en-IN').format(tempIndRecovered);
+        document.getElementById('deceased').innerHTML = new Intl.NumberFormat('en-IN').format(tempIndDeceased);
         document.getElementById('updatedtime').innerHTML = "Updated as of " + json.statewise[0].lastupdatedtime;
         document.getElementById('updatedEntity').innerHTML = "COVID-19 - INDIA";
 
 
-        console.log(tempIndPositive)
+        console.log("tempIndPositve"+json.statewise[0].confirmed)
+        console.log("tempIndrecovered"+json.statewise[0].recovered)
+        console.log(typeof(tempIndRecovered));
+        console.log((tempIndRecovered)/(tempIndPositive))
+
         //console.log(parseInt(tempIndDeceased) / parseInt(tempIndPositive)) * 100;
         document.getElementById('recovered-percent').innerHTML = "(" + ((parseInt(tempIndRecovered) / parseInt(tempIndPositive)) * 100).toFixed(2) + " %)";
         document.getElementById('active-percent').innerHTML = "(" + ((parseInt(tempIndActive) / parseInt(tempIndPositive)) * 100).toFixed(2) + " %)";
-        document.getElementById('deceased-percent').innerHTML = "(" + (parseInt(tempIndDeceased) / parseInt(tempIndPositive)).toFixed(2) + " %)";
+        document.getElementById('deceased-percent').innerHTML = "(" + ((parseInt(tempIndDeceased) / parseInt(tempIndPositive))*100).toFixed(2) + " %)";
 
 
         loadIndChart();
