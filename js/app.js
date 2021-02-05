@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 function loadCountdown() {
 
-    var countDownDate = new Date("February 28, 2021 06:00:00").getTime();
+    var countDownDate = new Date("August 31, 2020 06:00:00").getTime();
 
     var x = setInterval(function () {
 

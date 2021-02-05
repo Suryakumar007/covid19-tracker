@@ -13,7 +13,7 @@ body.dark {
   --secondary-color: gray;
   --card-color: #f5f5f5;
   --font-color: #121212;
-  --font-weight: 350;
+  --font-weight: 360;
   --box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2),
     0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -60,7 +60,7 @@ body {
 #cardrecovered,
 #carddeceased,
 #cardactive {
-  width: 220px;
+  width: 260px;
   background-color: var(--card-color);
   box-shadow: var(--box-shadow);
 }
