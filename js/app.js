@@ -415,7 +415,7 @@ function loadTN() {
         document.getElementById('recovered').innerHTML = new Intl.NumberFormat('en-IN').format(tempRecovered)
         document.getElementById('deceased').innerHTML = new Intl.NumberFormat('en-IN').format(tempDeceased)
         document.getElementById('updatedtime').innerHTML = "Updated as of " + tempDate;
-        document.getElementById('updatedEntity').innerHTML = "COVID-19 - TN";
+        document.getElementById('updatedEntity').innerHTML = "COVID-19 Status in TamilNadu";
         console.log(typeof(tempRecovered))
         console.log((tempRecovered))
 
@@ -451,7 +451,7 @@ function loadInd() {
         document.getElementById('recovered').innerHTML = new Intl.NumberFormat('en-IN').format(tempIndRecovered);
         document.getElementById('deceased').innerHTML = new Intl.NumberFormat('en-IN').format(tempIndDeceased);
         document.getElementById('updatedtime').innerHTML = "Updated as of " + json.statewise[0].lastupdatedtime;
-        document.getElementById('updatedEntity').innerHTML = "COVID-19 - INDIA";
+        document.getElementById('updatedEntity').innerHTML = "COVID-19 Status in India";
 
 
         console.log("tempIndPositve"+json.statewise[0].confirmed)
