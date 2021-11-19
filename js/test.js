@@ -48,7 +48,7 @@ function loadCountdown() {
 function loadIndChart() {
 
     const IndTimeSeries = new XMLHttpRequest();
-    IndTimeSeries.open('GET', 'https://data.covid19india.org/data.json', true);
+    IndTimeSeries.open('GET', 'https://api.covid19india.org/data.json', true);
     IndTimeSeries.send();
     IndTimeSeries.onload = function () {
         const IndJson = JSON.parse(IndTimeSeries.responseText);
@@ -222,7 +222,7 @@ function loadIndChart() {
 function loadTNChart() {
 
     const TNTimeSeries = new XMLHttpRequest();
-    TNTimeSeries.open('GET', 'https://data.covid19india.org/states_daily.json', true);
+    TNTimeSeries.open('GET', 'https://api.covid19india.org/states_daily.json', true);
     TNTimeSeries.send();
     TNTimeSeries.onload = function () {
         const TNjson = JSON.parse(TNTimeSeries.responseText);
@@ -394,7 +394,7 @@ function loadTNChart() {
 
 function loadTN() {
     const req = new XMLHttpRequest();
-    req.open('GET', 'https://data.covid19india.org/data.json', true);
+    req.open('GET', 'https://api.covid19india.org/data.json', true);
     req.send();
     req.onload = function () {
         const json = JSON.parse(req.responseText);
@@ -435,7 +435,7 @@ function loadTN() {
 function loadInd() {
 
     const req = new XMLHttpRequest();
-    req.open('GET', 'https://data.covid19india.org/data.json', true);
+    req.open('GET', 'https://api.covid19india.org/data.json', true);
     req.send();
     req.onload = function () {
         const json = JSON.parse(req.responseText);
